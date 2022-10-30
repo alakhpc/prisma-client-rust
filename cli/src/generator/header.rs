@@ -21,6 +21,7 @@ pub fn generate(args: &GenerateArgs) -> TokenStream {
     let schema_path = schema_path_str
         .parse()
         .expect("Failed to parse schema path!");
+    dbg!(&schema_path);
 
     let migrations_include = cfg!(feature = "migrations")
         .then(|| {
